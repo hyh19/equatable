@@ -347,8 +347,7 @@ flowchart TD
 
 Equatable 的 `==` 运算符实现采用了多层验证策略：
 
-```12:15:lib/src/equatable.dart
-  @override
+```dart 45:50:lib/src/equatable.dart
   bool operator ==(Object other) {
     return identical(this, other) ||
         other is Equatable &&
@@ -368,8 +367,7 @@ Equatable 的 `==` 运算符实现采用了多层验证策略：
 
 Equatable 使用了高效的哈希码组合算法：
 
-```53:53:lib/src/equatable.dart
-  @override
+```dart 53:53:lib/src/equatable.dart
   int get hashCode => runtimeType.hashCode ^ mapPropsToHashCode(props);
 ```
 
